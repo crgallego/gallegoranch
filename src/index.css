@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-clay: 139, 94, 60;
+    --color-cream: 248, 244, 236;
+    --color-charcoal: 47, 47, 47;
+    --color-sage: 157, 170, 140;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream font-body text-charcoal;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-clay text-cream py-3 px-6 rounded hover:bg-clay/90 transition-all duration-300 inline-block font-medium text-center;
+  }
+  
+  .btn-secondary {
+    @apply bg-sage text-charcoal py-3 px-6 rounded hover:bg-sage/90 transition-all duration-300 inline-block font-medium text-center;
+  }
+
+  .btn-outline {
+    @apply border-2 border-clay text-clay py-3 px-6 rounded hover:bg-clay/5 transition-all duration-300 inline-block font-medium text-center;
+  }
+
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .product-card {
+    @apply bg-cream border border-clay/10 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300;
+  }
+  
+  .nav-link {
+    @apply relative tracking-wide text-charcoal/90 hover:text-clay transition-colors after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-clay after:transition-all hover:after:w-full;
+  }
+
+  .animate-fade-in {
+    @apply opacity-0 translate-y-4 transition-all duration-700 ease-out;
+  }
+  
+  .animate-fade-in.in-view {
+    @apply opacity-100 translate-y-0;
+  }
+}
